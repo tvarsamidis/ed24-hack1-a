@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 @SuperBuilder
-@Entity()
+@Entity
 @Table(name = "BOOKS")
 public class Book extends Content {
 	@Column(length = 1024, nullable = false)
