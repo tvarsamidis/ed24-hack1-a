@@ -16,14 +16,20 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @SuperBuilder
-
-public class Author  {
-
+@Entity
+@Table(name = "AUTHORS")
+public class Author extends BaseModel {
+	@Column(length = 20, nullable = false)
 	private String firstname;
 
+	@Column(length = 30, nullable = false)
 	private String lastname;
 
+	@Column(length = 50, nullable = false)
 	private String email;
 
+	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
+	@OneToMany(mappedBy = "authorId")
 	private Set<Activity> activities = new HashSet<>();
 }

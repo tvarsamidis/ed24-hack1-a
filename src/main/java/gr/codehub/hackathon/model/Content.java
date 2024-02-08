@@ -18,9 +18,16 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @SuperBuilder
-public class Content {
-
+@Inheritance(strategy = InheritanceType.JOINED)
+@Entity
+@Table(name = "CONTENTS")
+public class Content extends BaseModel {
+	@Column(length = 100, nullable = false)
 	private String title;
 
+	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
+	@OneToMany(mappedBy = "contentId")
 	private Set<Activity> activities = new HashSet<>();
 }
+
