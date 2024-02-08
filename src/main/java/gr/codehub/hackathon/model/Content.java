@@ -31,3 +31,7 @@ public class Content extends BaseModel {
 	private Set<Activity> activities = new HashSet<>();
 }
 
+
+
+// AuthorService
+// method assign( Author, Content, cost) -> Activity
